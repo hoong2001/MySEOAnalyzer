@@ -1,0 +1,39 @@
+﻿@model ViewModel.ViewMessage
+@{
+    ViewBag.Title = "A";
+}
+
+<h1>Number of word occurrences</h1>
+<table id="tblText" class="table table-condensed table-bordered table-striped table-hover" style="width:100%">
+    <thead>
+        <tr>
+            <th>Word</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var wordResut in Model.WordResults)
+        {
+            <tr>
+                <td>@wordResut.Word</td>
+                <td>@wordResut.Count</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Word</th>
+            <th>Count</th>
+        </tr>
+    </tfoot>
+</table>
+
+@section scripts{
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <script src="~/Scripts/dataTables.bootstrap.js"></script>
+    <script>
+        $(function () {
+            var tblText = $('#tblText').DataTable();
+        });
+    </script>
+}

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+
+    <h1 class="text-center">SEO Analyzer</h1>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-inline" method="post" action="@Url.Action("Analyze", "Home")">
+            <div class="form-group">
+                <label for="webURL">Website</label>
+                <input type="text" class="form-control" id="webURL" name="webURL" placeholder="Your website URL">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="isEnabledAnalyze" name="isEnabledAnalyze"> Enabled
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-default">Send</button>
+        </form>
+    </div>
+</div>

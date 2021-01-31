@@ -162,8 +162,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Analyze.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\AnalyzeText.cshtml" />
+    <None Include="Views\Home\AnalyzeSite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -183,11 +184,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Model\ViewModel.csproj">
+    <ProjectReference Include="..\Model\ViewModel.csproj">
       <Project>{e7e014d0-89f0-40fa-8ae7-69273814c8db}</Project>
       <Name>ViewModel</Name>
     </ProjectReference>
-    <ProjectReference Include="Service\Service.csproj">
+    <ProjectReference Include="..\Service\Service.csproj">
       <Project>{992eac4b-e941-4b01-a46f-b4472ed0de8b}</Project>
       <Name>Service</Name>
     </ProjectReference>

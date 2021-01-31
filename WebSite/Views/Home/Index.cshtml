@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ViewModel.ViewMessage
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,14 +9,18 @@
 
 </div>
 
-
+@if (@Model.StatusID != "0")
+{
+    <div class="alert alert-danger" role="alert">@Model.Message</div>
+}
 <div class="row">
     <div class="col-md-12">
-        <form class="form-inline" method="post" action="@Url.Action("Analyze", "Home")">
+        <form method="post" action="@Url.Action("Analyze", "Home")">
             <div class="form-group">
-                <label for="webURL">Website</label>
-                <input type="text" class="form-control" id="webURL" name="webURL" placeholder="Your website URL">
+                <label for="webURL">Website or Text</label>
+                <input type="text" class="form-control" id="webURL" name="webURL" placeholder="Your website URL or text.">
             </div>
+            <span id="helpBlock" class="help-block">Website URL format MUST begin with http://www or https://www </span>
             <div class="checkbox">
                 <label>
                     <input type="checkbox" id="isEnabledAnalyze" name="isEnabledAnalyze"> Enabled

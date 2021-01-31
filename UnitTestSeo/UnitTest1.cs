@@ -47,7 +47,8 @@ namespace UnitTestSeo
             string text = @"https://www.4guysfromrolla.com/articles/011211-1.aspx";
 
             MyAnalyzer service = new MyAnalyzer();
-            var result = service.GetSiteResults(url: text);
+            string host = "4guysfromrolla";
+            var result = service.GetSiteResults(url: text, host:"" );
         }
 
         [TestMethod]
@@ -76,7 +77,6 @@ namespace UnitTestSeo
 
 
             }
-
 
             var metaTags = document.DocumentNode.SelectNodes("//meta");
             if (metaTags != null)

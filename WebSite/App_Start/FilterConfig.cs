@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace MySEOAnalyer
+namespace MySEOAnalyzer
 {
     public class FilterConfig
     {

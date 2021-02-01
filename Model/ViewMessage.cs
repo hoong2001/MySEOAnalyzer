@@ -11,6 +11,7 @@ namespace ViewModel
         public string Message { get; set; } = string.Empty;
 
         public string StatusID { get; set; } = string.Empty;
+        public bool isEnabledAnalyzeChecked { get; set; }
 
         public List<Result> ExternalLinkResults = new List<Result>();
 

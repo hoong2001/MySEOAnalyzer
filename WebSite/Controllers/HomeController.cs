@@ -68,10 +68,10 @@ namespace MySEOAnalyzer.Controllers
                 return View("Index", new ViewMessage()
                 {
                     StatusID = "1",
-                    Message = "SEO is Disabled."
+                    Message = "SEO is Disabled.",
+                    isEnabledAnalyzeChecked = isEnabledAnalyze != null
                 });
             }
-
         }
 
     }

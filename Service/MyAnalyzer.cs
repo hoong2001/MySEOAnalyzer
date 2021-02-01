@@ -62,7 +62,6 @@ namespace Service
             if (links != null)
             {
                 string onlyHostName = string.Empty;
-
                 if (!string.IsNullOrWhiteSpace(host))
                 {
                     string[] hostSplit = null;
@@ -77,18 +76,27 @@ namespace Service
                     }
                 }
 
+                // Excluded same host url and repeated url
                 var exLinks = links.Where(attr => attr.Attributes["href"] != null &&
                                                 attr.Attributes["href"].Value.Contains("http") &&
                                                 !attr.Attributes["href"].Value.Contains(onlyHostName))
                     .Select(selector => new
                     {
-                        Text = selector.Attributes["href"]
+                        Text = selector.Attributes["href"].Value
                     }).Distinct()
                     .ToList();
 
+                // Count each external link occurrences
                 foreach (var exlink in exLinks)
                 {
-                    // do something
+                    int count = links.Count(attr => attr.Attributes["href"] != null &&
+                    string.Compare(attr.Attributes["href"].Value, exlink.Text) == 0);
+                    viewMessage.ExternalLinkResults.Add(
+                        new Result()
+                        {
+                            Word = exlink.Text,
+                            Count = count
+                        });
                 }
             }
             viewMessage.StatusID = "0";

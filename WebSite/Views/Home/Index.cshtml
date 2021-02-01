@@ -19,11 +19,12 @@
             <div class="form-group">
                 <label for="webURL">Website or Text</label>
                 <input type="text" class="form-control" id="webURL" name="webURL" placeholder="Your website URL or text.">
+
             </div>
             <span id="helpBlock" class="help-block">Website URL format MUST begin with http://www or https://www </span>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" id="isEnabledAnalyze" name="isEnabledAnalyze"> Enabled
+                    <input type="checkbox" id="isEnabledAnalyze" name="isEnabledAnalyze" @(Model.isEnabledAnalyzeChecked == true ? "Checked" : string.Empty)> Disabled
                 </label>
             </div>
 
